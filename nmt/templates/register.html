@@ -14,16 +14,24 @@
         border-radius:20px;
         margin-top:10%;
     }
-
-
 </style>
 <body>
     <div class="container style-1">
 
-        <h2 class="container text-center mt-5">Se connecter</h2>
+        <h2 class="container text-center mt-5">Créer un nouveau compte </h2>
 
         <form class="container p-5" method="POST">
             {% csrf_token %}
+
+            <div class="mb-3">
+                <label class="form-label">Last Name :</label>
+                <input type="text" name="lname" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">First Name :</label>
+                <input type="text" name="fname" class="form-control">
+            </div>
 
             <div class="mb-3">
                 <label class="form-label">Email address</label>
@@ -39,9 +47,10 @@
 
         </form>
 
-        <p> You don't have an account <a href="{% url 'register' %}"> Register </a> </p>
+        <p> You already have an account <a href="{% url 'login' %}"> Login </a> </p>
 
         <p> {{ message }} </p>
+
     </div>
 </body>
 </html>
