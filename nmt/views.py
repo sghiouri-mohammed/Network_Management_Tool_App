@@ -72,3 +72,32 @@ def logout(request):
     request.session["mail"] = None
 
     return redirect("login")
+
+def campus_details(request):
+
+    return render(request, 'campus_details.html')
+
+def data_centre_details(request):
+    return render(request, 'data_centre_details.html')
+
+def conference_centre_details(request):
+    return render(request, 'conference_centre_details.html')
+
+def chateau_details(request):
+    return render(request, 'campus/chateau_details.html')
+
+
+def marshall_building_details(request):
+    return render(request, 'campus/marshall_building_details.html')
+
+def boulogne_details(request):
+    return render(request, 'campus/boulogne_details.html')
+
+
+def franqueville_details(request):
+    return render(request, 'campus/franqueville_details.html')
+
+
+def monaco_details(request):
+    return render(request, 'campus/monaco_details.html')
+

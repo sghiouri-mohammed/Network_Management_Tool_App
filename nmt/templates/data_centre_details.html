@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Centre Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+    .card {
+        margin-right: 20px;
+    }
+</style>
+<body>
+
+    {% include 'menu.html' %}
+
+    <main class="container p-3 m-auto">
+        <div class="row mt-3">
+            <!-- Affichage de six cartes statiques pour le détail du campus -->
+            <div class="col-md-4 mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-2H1fD4bAa6Dg4evibHNqlMQL6z0D-VQOw&usqp=CAU" alt="Campus Image">
+                    <div class="card-body">
+                        <a href="{% url 'data_centre_details' %}"><p class="card-text">Chateau</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-2H1fD4bAa6Dg4evibHNqlMQL6z0D-VQOw&usqp=CAU" alt="Campus Image">
+                    <div class="card-body">
+                        <a href="{% url 'data_centre_details' %}"><p class="card-text">Marshall Building</p></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Répéter les trois cartes ci-dessus une fois de plus pour faire six cartes -->
+            <div class="col-md-4 mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-2H1fD4bAa6Dg4evibHNqlMQL6z0D-VQOw&usqp=CAU" alt="Campus Image">
+                    <div class="card-body">
+                        <a href="{% url 'data_centre_details' %}"><p class="card-text">Boulogne</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-2H1fD4bAa6Dg4evibHNqlMQL6z0D-VQOw&usqp=CAU" alt="Campus Image">
+                    <div class="card-body">
+                        <a href="{% url 'data_centre_details' %}"><p class="card-text">Franqueville</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {% include 'footer.html' %}
+
+</body>
+</html>
