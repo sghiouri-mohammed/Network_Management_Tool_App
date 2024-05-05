@@ -76,29 +76,29 @@ def logout(request):
 
 def campus_details(request):
 
-    return render(request, 'campus_details.html')
+    return render(request, 'campus_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
 
 def data_centre_details(request):
-    return render(request, 'data_centre_details.html')
+    return render(request, 'data_centre_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
 
 def conference_centre_details(request):
-    return render(request, 'conference_centre_details.html')
+    return render(request, 'conference_centre_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
 
 def chateau_details(request):
-    return render(request, 'campus/chateau_details.html')
+    return render(request, 'campus/chateau_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
 
 
 def marshall_building_details(request):
-    return render(request, 'campus/marshall_building_details.html')
+    return render(request, 'campus/marshall_building_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
 
 def boulogne_details(request):
-    return render(request, 'campus/boulogne_details.html')
+    return render(request, 'campus/boulogne_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
 
 
 def franqueville_details(request):
-    return render(request, 'campus/franqueville_details.html')
+    return render(request, 'campus/franqueville_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
 
 
 def monaco_details(request):
-    return render(request, 'campus/monaco_details.html')
+    return render(request, 'campus/monaco_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
 
