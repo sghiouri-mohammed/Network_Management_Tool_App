@@ -11,7 +11,8 @@ def register(request):
 
         first_name = request.POST["fname"]
         last_name = request.POST["lname"]
-        username = request.POST["mail"]
+        mail = request.POST["mail"]
+        username = request.POST["username"]
         mot_de_passe = request.POST["pwd"]
 
 
@@ -35,7 +36,7 @@ def login(request):
 
     if (request.method == "POST" ):
 
-        username = request.POST["mail"]
+        username = request.POST["username"]
         mot_de_passe = request.POST["pwd"]
 
         users = Account.objects.all()

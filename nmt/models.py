@@ -8,4 +8,5 @@ class Account(models.Model):
     lastname = models.CharField(max_length=255)
     firstname = models.CharField(max_length=255)
     username = models.CharField(max_length=255)
+    mail = models.EmailField(default="admin@gmail.com")
     password = models.CharField(max_length=40)
