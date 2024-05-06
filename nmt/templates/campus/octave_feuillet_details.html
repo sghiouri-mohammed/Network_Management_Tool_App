@@ -45,18 +45,18 @@
 
     {% include 'menu.html' %}
 
-    <h2 class="mt-5"> Marshall Building Floors </h2>
+    <h2 class="mt-5"> Octave Feuillet Floors </h2>
     <section class=" section1 container p-4 m-auto mt-5">
 
         <!-- Add button -->
         <button class="add-button" onclick="showAddForm()">+ Add</button>
 
-        <!-- Table of Marshall Building Floors -->
+        <!-- Table of Octave Feuillet Floors -->
         <table class="table tablo">
           <thead class="thead-dark">
             <tr>
               <th scope="col">ID</th>
-              <th scope="col">Marshall Building Floors Names</th>
+              <th scope="col">Octave Feuillet Floors Names</th>
               <th scope="col">Link</th>
               <th scope="col">Actions</th>
             </tr>
@@ -64,28 +64,27 @@
           <tbody>
             <tr>
               <th scope="row">1</th>
-              <td>MB-Basement</td>
-              <td><a href="{% url 'marshall_building_details' %}"><p class="card-text">Basement</p></a></td>
+              <td>OF-Basement</td>
+              <td><a href="{% url 'octave_feuillet_details' %}"><p class="card-text">Basement</p></a></td>
               <td>
                   <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
                   <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
               </td>
             </tr>
-
             <tr>
               <th scope="row">2</th>
-              <td>MB-Parcking</td>
-              <td><a href="{% url 'marshall_building_details' %}"><p class="card-text">Parcking</p></a></td>
+              <td>OF-Ground-floor</td>
+              <td><a href="{% url 'octave_feuillet_details' %}"><p class="card-text">Ground-floor</p></a></td>
               <td>
                   <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
                   <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
               </td>
             </tr>
 
-            <tr>
+             <tr>
               <th scope="row">3</th>
-              <td>MB-Ground-floor</td>
-              <td><a href="{% url 'marshall_building_details' %}"><p class="card-text">Ground-floor</p></a></td>
+              <td>OF-First-floor<</td>
+              <td><a href="{% url 'octave_feuillet_details' %}"><p class="card-text">First-floor</p></a></td>
               <td>
                   <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
                   <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
@@ -94,8 +93,8 @@
 
              <tr>
               <th scope="row">4</th>
-              <td>MB-First-floor</td>
-              <td><a href="{% url 'marshall_building_details' %}"><p class="card-text">First-floor</p></a></td>
+              <td>OF-Second-floor</td>
+              <td><a href="{% url 'octave_feuillet_details' %}"><p class="card-text">Second-floor</p></a></td>
               <td>
                   <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
                   <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
@@ -104,37 +103,27 @@
 
              <tr>
               <th scope="row">5</th>
-              <td>MB-Second-floor</td>
-              <td><a href="{% url 'marshall_building_details' %}"><p class="card-text">Second-floor</p></a></td>
+              <td>OF-Third-floor</td>
+              <td><a href="{% url 'octave_feuillet_details' %}"><p class="card-text">Third-floor</p></a></td>
               <td>
                   <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
                   <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
               </td>
             </tr>
 
-             <tr>
+            <tr>
               <th scope="row">6</th>
-              <td>MB-Third-floor</td>
-              <td><a href="{% url 'marshall_building_details' %}"><p class="card-text">Third-floor</p></a></td>
+              <td>OF-Fourth-floor</td>
+              <td><a href="{% url 'octave_feuillet_details' %}"><p class="card-text">Fourth-floor</p></a></td>
               <td>
                   <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
                   <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
               </td>
             </tr>
-
             <tr>
               <th scope="row">7</th>
-              <td>MB-Fourth-floor</td>
-              <td><a href="{% url 'marshall_building_details' %}"><p class="card-text">Fourth-floor</p></a></td>
-              <td>
-                  <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
-                  <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">8</th>
-              <td>MB-Fifth-floor</td>
-              <td><a href="{% url 'marshall_building_details' %}"><p class="card-text">Fifth-floor</p></a></td>
+              <td>OF-Fifth-floor</td>
+              <td><a href="{% url 'octave_feuillet_details' %}"><p class="card-text">Fifth-floor</p></a></td>
               <td>
                   <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
                   <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
@@ -143,22 +132,22 @@
 
             <tr>
               <th scope="row">9</th>
-              <td>MB-Sixth-floor</td>
-              <td><a href="{% url 'marshall_building_details' %}"><p class="card-text">Sixth-floor</p></a></td>
+              <td>OF-Sixth-floor</td>
+              <td><a href="{% url 'octave_feuillet_details' %}"><p class="card-text">Sixth-floor</p></a></td>
               <td>
                   <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
                   <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
               </td>
             </tr>
-            <!-- Add more rows for Marshall Building -->
+            <!-- Add more rows for Octave Feuillet -->
 
           </tbody>
         </table>
 
-        <!-- Form to add a new Marshall Building floor -->
+        <!-- Form to add a new Octave Feuillet floor -->
         <form id="add-form" style="display: none;">
-            <label for="Campus_Building_Name">Marshall Building Floor Name </label><br>
-            <input type="text" id="Marshall Building_Floor_Name" name="Marshall Building_floor_name" placeholder="Marshall Building Floor Name"><br><br>
+            <label for="Octave Feuillet_Floor_Name">Octave Feuillet Floor Name </label><br>
+            <input type="text" id="Octave Feuillet_Floor_Name" name="Octave Feuillet_floor_name" placeholder="Octave Feuillet Floor Name"><br><br>
 
             <label for="link">Link:</label><br>
             <input type="text" id="link" name="link" placeholder="Link"><br><br>

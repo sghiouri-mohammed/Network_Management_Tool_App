@@ -2,7 +2,7 @@
 
 {% load static %}
 
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>The list of buildings</title>
@@ -19,11 +19,21 @@
         text-align:center;
     }
 
-    .section1 > button{
-        float:right;
-        border:2px solid transparent;
-        background-color:#3f51b5;
-        color:white;
+    /* Style for the Add button */
+    .add-button {
+        border: none;
+        background-color: #3f51b5;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Style for the Add button on hover */
+    .add-button:hover {
+        background-color: #2c3e50;
     }
 
     h2{
@@ -35,15 +45,18 @@
 
     {% include 'menu.html' %}
 
-    <h2 class="mt-5"> Network Center </h2>
+    <h2 class="mt-5"> ABMC Network Center </h2>
     <section class=" section1 container p-4 m-auto mt-5">
 
-        <button> + Ajouter </button>
+        <!-- Add button -->
+        <button class="add-button" onclick="showAddForm()">+ Add</button>
+
+        <!-- Table of Network Centers -->
         <table class="table tablo">
           <thead class="thead-dark">
             <tr>
               <th scope="col">ID</th>
-              <th scope="col">Network Center NAme</th>
+              <th scope="col">Network Center Name</th>
               <th scope="col">Link</th>
               <th scope="col">Actions</th>
             </tr>
@@ -53,34 +66,58 @@
               <th scope="row">1</th>
               <td>Campus</td>
               <td><a href="{% url 'campus_details' %}"><p class="card-text">Campus</p></a></td>
-              <td> <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
-                  <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/> </td>
+              <td>
+                  <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
+                  <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
+              </td>
             </tr>
 
             <tr>
-              <th scope="row">1</th>
+              <th scope="row">2</th>
               <td>Data Center</td>
               <td><a href="{% url 'data_centre_details' %}"><p class="card-text">Data Centre</p></a></td>
-              <td> <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
-                  <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/> </td>
+              <td>
+                  <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
+                  <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
+              </td>
             </tr>
 
             <tr>
-              <th scope="row">1</th>
+              <th scope="row">3</th>
               <td>Conference Center</td>
-              <td><a href="{% url 'conference_centre_details' %}"><p class="card-text">Conference Centre </p></a></td>
-              <td> <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
-                  <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/> </td>
+              <td><a href="{% url 'conference_centre_details' %}"><p class="card-text">Conference Centre</p></a></td>
+              <td>
+                  <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
+                  <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
+              </td>
             </tr>
+
+            <!-- Add more rows for Network Centers -->
 
           </tbody>
         </table>
 
+        <!-- Form to add a new Network Centre -->
+        <form id="add-form" style="display: none;">
+            <label for="network_center_name">Network Center Name:</label><br>
+            <input type="text" id="network_center_name" name="network_center_name" placeholder="Network Center Name"><br><br>
+
+            <label for="link">Link:</label><br>
+            <input type="text" id="link" name="link" placeholder="Link"><br><br>
+
+            <button type="submit" class="btn btn-success">Add</button>
+        </form>
 
     </section>
 
-
     {% include 'footer.html' %}
+
+    <!-- JavaScript to display the form -->
+    <script>
+        function showAddForm() {
+            document.getElementById("add-form").style.display = "block";
+        }
+    </script>
 
 </body>
 </html>

@@ -98,7 +98,43 @@ def boulogne_details(request):
 def franqueville_details(request):
     return render(request, 'campus/franqueville_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
 
+def octave_feuillet_details(request):
+    return render(request, 'campus/octave_feuillet_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
 
 def monaco_details(request):
     return render(request, 'campus/monaco_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
 
+def ch_basement_details(request):
+    return render(request, 'campus/chateau/ch_basement_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
+
+def ch_ground_floor_details(request):
+    return render(request, 'campus/chateau/ch_ground_floor_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
+
+def ch_third_floor_details(request):
+    return render(request, 'campus/chateau/ch_third_floor_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
+def mb_basement_details(request):
+    return render(request, 'campus/marshall_building/mb_basement_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
+
+def mb_ground_floor_details(request):
+    return render(request, 'campus/marshall_building/mb_ground_floor_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
+
+def mb_first_floor_details(request):
+    return render(request, 'campus/marshall_building/mb_first_floor_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
+
+def mb_second_floor_details(request):
+    return render(request, 'campus/marshall_building/mb_second_floor_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
+
+def mb_third_floor_details(request):
+    return render(request, 'campus/marshall_building/mb_third_floor_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
+
+def mb_fourth_floor_details(request):
+    return render(request, 'campus/marshall_building/mb_fourth_floor_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
+def mb_fifth_floor_details(request):
+    return render(request, 'campus/marshall_building/mb_fifth_floor_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
+
+def mb_sixth_floor_details(request):
+    return render(request, 'campus/marshall_building/mb_sixth_floor_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
+
+
+def floor_details(request):
+    return render(request, 'campus/floor_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})

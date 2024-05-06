@@ -1,67 +1,150 @@
 <!DOCTYPE html>
-<html lang="fr">
+
+{% load static %}
+
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Campus Details</title>
+    <title>The list of buildings</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <style>
+
     .card {
         margin-right: 20px;
     }
+
+    .section1{
+        background-color:white;
+        text-align:center;
+    }
+
+    /* Style for the Add button */
+    .add-button {
+        border: none;
+        background-color: #3f51b5;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Style for the Add button on hover */
+    .add-button:hover {
+        background-color: #2c3e50;
+    }
+
+    h2{
+        text-align:center;
+    }
+
 </style>
 <body>
 
     {% include 'menu.html' %}
 
-    <main class="container p-3 m-auto">
-        <div class="row mt-3">
-            <!-- Affichage de six cartes statiques pour le détail du campus -->
-            <div class="col-md-4 mb-4">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-2H1fD4bAa6Dg4evibHNqlMQL6z0D-VQOw&usqp=CAU" alt="Campus Image">
-                    <div class="card-body">
-                        <a href="{% url 'chateau_details' %}"><p class="card-text">Chateau</p></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-2H1fD4bAa6Dg4evibHNqlMQL6z0D-VQOw&usqp=CAU" alt="Campus Image">
-                    <div class="card-body">
-                        <a href="{% url 'marshall_building_details' %}"><p class="card-text">Marshall Building</p></a>
-                    </div>
-                </div>
-            </div>
-            <!-- Répéter les trois cartes ci-dessus une fois de plus pour faire six cartes -->
-            <div class="col-md-4 mb-4">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-2H1fD4bAa6Dg4evibHNqlMQL6z0D-VQOw&usqp=CAU" alt="Campus Image">
-                    <div class="card-body">
-                        <a href="{% url 'boulogne_details' %}"><p class="card-text">Boulogne</p></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-2H1fD4bAa6Dg4evibHNqlMQL6z0D-VQOw&usqp=CAU" alt="Campus Image">
-                    <div class="card-body">
-                        <a href="{% url 'campus_details' %}"><p class="card-text">Franqueville</p></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-2H1fD4bAa6Dg4evibHNqlMQL6z0D-VQOw&usqp=CAU" alt="Campus Image">
-                    <div class="card-body">
-                        <a href="{% url 'campus_details' %}"><p class="card-text">Monaco</p></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+    <h2 class="mt-5"> Campus Buildings </h2>
+    <section class=" section1 container p-4 m-auto mt-5">
+
+        <!-- Add button -->
+        <button class="add-button" onclick="showAddForm()">+ Add</button>
+
+        <!-- Table of Campus Buildings -->
+        <table class="table tablo">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Campus Buildings Names</th>
+              <th scope="col">Link</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Chateau</td>
+              <td><a href="{% url 'chateau_details' %}"><p class="card-text">Chateau</p></a></td>
+              <td>
+                  <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
+                  <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">2</th>
+              <td>Marshall Building</td>
+              <td><a href="{% url 'marshall_building_details' %}"><p class="card-text">Marsall Building</p></a></td>
+              <td>
+                  <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
+                  <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">3</th>
+              <td>Boulogne</td>
+              <td><a href="{% url 'boulogne_details' %}"><p class="card-text">Boulogne</p></a></td>
+              <td>
+                  <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
+                  <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Franqueville</td>
+              <td><a href="{% url 'franqueville_details' %}"><p class="card-text">Franqueville</p></a></td>
+              <td>
+                  <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
+                  <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Monaco</td>
+              <td><a href="{% url 'monaco_details' %}"><p class="card-text">Monaco</p></a></td>
+              <td>
+                  <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
+                  <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
+              </td>
+            </tr>
+
+              <tr>
+              <th scope="row">6</th>
+              <td>Octave Feuillet</td>
+              <td><a href="{% url 'octave_feuillet_details' %}"><p class="card-text">Octave Feuillet</p></a></td>
+              <td>
+                  <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
+                  <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
+              </td>
+            </tr>
+            <!-- Add more rows for Campus building -->
+
+          </tbody>
+        </table>
+
+        <!-- Form to add a new Campus building -->
+        <form id="add-form" style="display: none;">
+            <label for="Campus_Building_Name">Campus Building Name </label><br>
+            <input type="text" id="Campus_Building_Name" name="campus_building_name" placeholder="Campus Building Name"><br><br>
+
+            <label for="link">Link:</label><br>
+            <input type="text" id="link" name="link" placeholder="Link"><br><br>
+
+            <button type="submit" class="btn btn-success">Add</button>
+        </form>
+
+    </section>
 
     {% include 'footer.html' %}
+
+    <!-- JavaScript to display the form -->
+    <script>
+        function showAddForm() {
+            document.getElementById("add-form").style.display = "block";
+        }
+    </script>
 
 </body>
 </html>
