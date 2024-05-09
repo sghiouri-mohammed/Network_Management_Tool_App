@@ -5,119 +5,116 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>The list of buildings</title>
+    <title>Network Management Tool</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <style>
 
-    .card {
-        margin-right: 20px;
-    }
-
-    .section1{
-        background-color:white;
-        text-align:center;
-    }
-
-    /* Style for the Add button */
-    .add-button {
-        border: none;
-        background-color: #3f51b5;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    /* Style for the Add button on hover */
-    .add-button:hover {
-        background-color: #2c3e50;
-    }
-
     h2{
         text-align:center;
+        width:260px;
+        border-bottom: 5px solid #6ed3cf;
+
+        margin:auto;
+        padding:4px;
     }
+
+
+    .class-grid{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 150px 150px 150px;
+        gap:20px;
+
+    }
+
+    .grid-item{
+
+        font-size:25px;
+        display:flex;
+        justify-content:center;
+        padding:10px;
+        align-items:center;
+        background-color:white;
+        border-radius:10px;
+        border:2px solid transparent;
+        text-align:center;
+    }
+
+    .grid-item p{
+        width:200px;
+    }
+
+
+
+
 
 </style>
 <body>
 
     {% include 'menu.html' %}
 
-    <h2 class="mt-5"> ABMC Network Center </h2>
-    <section class=" section1 container p-4 m-auto mt-5">
+    <h2 class="mt-5"> NMT Insights </h2>
 
-        <!-- Add button -->
-        <button class="add-button" onclick="showAddForm()">+ Add</button>
+    <section class="container p-4 m-auto mt-5">
 
-        <!-- Table of Network Centers -->
-        <table class="table tablo">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Network Center Name</th>
-              <th scope="col">Link</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Campus</td>
-              <td><a href="{% url 'campus_details' %}"><p class="card-text">Campus</p></a></td>
-              <td>
-                  <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
-                  <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
-              </td>
-            </tr>
+        <div class="class-grid">
 
-            <tr>
-              <th scope="row">2</th>
-              <td>Data Center</td>
-              <td><a href="{% url 'data_centre_details' %}"><p class="card-text">Data Centre</p></a></td>
-              <td>
-                  <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
-                  <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
-              </td>
-            </tr>
+            <div class="grid-item">
+                <p> Number of Users <br> <a class="btn btn-success mt-3" href=""> Add <img width="30" height="30" src="{% static 'icons/plus.png' %}" alt="group"/> </a> </p>
+                <p>
+                    <img width="40" height="40" src="{% static 'icons/users.png' %}" alt="group"/>
+                    <br>
+                    {{number_of_users}}
+                </p>
+            </div>
 
-            <tr>
-              <th scope="row">3</th>
-              <td>Conference Center</td>
-              <td><a href="{% url 'conference_centre_details' %}"><p class="card-text">Conference Centre</p></a></td>
-              <td>
-                  <img width="30" height="30" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/> &nbsp;&nbsp;
-                  <img width="30" height="30" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/>
-              </td>
-            </tr>
+            <div class="grid-item">
+                <p> Number of Devices </p>
+                <p>
+                    <img width="40" height="40" src="{% static 'icons/devices.png' %}" alt="group"/>
+                    <br>
+                    10
+                </p>
+            </div>
 
-            <!-- Add more rows for Network Centers -->
+            <div class="grid-item">
+                <p> Number of Buildings </p>
+                <p> <img width="30" height="30" src="{% static 'icons/buildings.png' %}" alt="group"/> <br>
+                    10
+                </p>
+            </div>
 
-          </tbody>
-        </table>
+            <div class="grid-item">
+                <p> Number of Floors <br> <a class="btn btn-success mt-3" href="{% url 'addfloor' %}"> Add <img width="30" height="30" src="{% static 'icons/plus.png' %}" alt="group"/> </a> </p>
+                <p> <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/group.png" alt="group"/>
+                    <br>
+                    {{number_of_floors}}
+                </p>
+            </div>
 
-        <!-- Form to add a new Network Centre -->
-        <form id="add-form" style="display: none;">
-            <label for="network_center_name">Network Center Name:</label><br>
-            <input type="text" id="network_center_name" name="network_center_name" placeholder="Network Center Name"><br><br>
+            <div class="grid-item">
+                <p> Number of Today's Connexions </p>
+                <p> <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/group.png" alt="group"/> 10 </p>
+            </div>
 
-            <label for="link">Link:</label><br>
-            <input type="text" id="link" name="link" placeholder="Link"><br><br>
+            <div class="grid-item">
+                <p> Number of New Users </p>
+                <p> <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/group.png" alt="group"/> 10 </p>
+            </div>
+        </div>
 
-            <button type="submit" class="btn btn-success">Add</button>
-        </form>
+    </section>
+
+    <h2> NMT Graphs </h2>
+
+    <section>
+
+
 
     </section>
 
     {% include 'footer.html' %}
-
-    <!-- JavaScript to display the form -->
-    <script>
-        function showAddForm() {
-            document.getElementById("add-form").style.display = "block";
-        }
-    </script>
 
 </body>
 </html>

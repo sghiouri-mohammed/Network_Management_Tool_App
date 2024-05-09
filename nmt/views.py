@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from nmt.models import Account
+from nmt.models import Account, Floor
 
 
 def register(request):
@@ -62,8 +62,34 @@ def login(request):
 
 
 def index(request):
-    return render(request, "index.html",context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
+    liste_users = Account.objects.all()
+    nbr_users = len(liste_users)
 
+    liste_floors = Floor.objects.all()
+    nbr_floors = len(liste_floors)
+    return render(request, "index.html",context={"number_of_floors":nbr_floors,"number_of_users":nbr_users,"first_name":request.session["fname"], "last_name":request.session["lname"]})
+
+
+def addfloor(request):
+
+    message = ""
+
+    if request.method == "POST":
+        floor_name = request.POST["floor_name"]
+        floor_level = request.POST["floor_level"]
+
+        floor = Floor(floor_name=floor_name, floor_level=floor_level)
+
+        if floor:
+            message = "Floos seccessfully added"
+            floor.save()
+
+
+    return render(request, "addfloor.html",context={"message":message,"first_name":request.session["fname"], "last_name":request.session["lname"]})
+
+
+def configuration(request):
+    return render(request, "configuration.html",context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
 
 
 def logout(request):
