@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Centre Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+    .card {
+        margin-right: 20px;
+    }
+    body{
+        background-image: url("../static/images/bg.png") !important;
+        background-repeat:no-repeat;
+        background-size:cover;
+    }
+
+    h2{
+        width:260px;    }
+
+    .class-grid{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 150px 150px 150px;
+        gap:20px;
+        margin-left:0px !important;
+
+    }
+
+    .grid-item{
+
+        font-size:25px;
+        display:flex;
+        justify-content:center;
+        padding:10px;
+        align-items:center;
+        background-color:white;
+        border-radius:10px;
+        border:2px solid transparent;
+        text-align:center;
+    }
+
+    .grid-item p{
+        width:200px;
+    }
+
+    .test{
+
+        display:grid;
+        grid-template-columns: 1fr 5fr;
+        gap:20px;
+
+    }
+
+    .btnn{
+        padding:0px;
+        width:100px;
+    }
+
+    .vv{
+        margin-bottom:50px;
+    }
+</style>
+<body>
+
+    <main class="test">
+
+        <div>
+            {% include 'Network Configuration Management/sidebar.html' %}
+        </div>
+
+        <section class="container p-3 m-auto">
+
+            <h3 class="vv"> Data Centers </h3>
+
+            <div class="row mt-3">
+                <!-- Affichage de six cartes statiques pour le détail du campus -->
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="width:300px">
+                        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-2H1fD4bAa6Dg4evibHNqlMQL6z0D-VQOw&usqp=CAU" alt="Card image" style="width:100%">
+                        <div class="card-body">
+
+                          <a href="{% url 'data_centre_details' %}" class="btn btn-warning">Chateau</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="width:300px">
+                        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-2H1fD4bAa6Dg4evibHNqlMQL6z0D-VQOw&usqp=CAU" alt="Card image" style="width:100%">
+                        <div class="card-body">
+
+                          <a href="{% url 'data_centre_details' %}" class="btn btn-warning">Marshall Building</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="width:300px">
+                        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-2H1fD4bAa6Dg4evibHNqlMQL6z0D-VQOw&usqp=CAU" alt="Card image" style="width:100%">
+                        <div class="card-body">
+
+                          <a href="{% url 'data_centre_details' %}" class="btn btn-warning">Boulogne</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="width:300px">
+                        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-2H1fD4bAa6Dg4evibHNqlMQL6z0D-VQOw&usqp=CAU" alt="Card image" style="width:100%">
+                        <div class="card-body">
+
+                          <a href="{% url 'data_centre_details' %}" class="btn btn-warning">Franqueville</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+</body>
+</html>

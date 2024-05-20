@@ -1,0 +1,62 @@
+
+{% load static %}
+
+<style>
+
+    body{
+        background-image: url("../static/images/bg.png");
+        background-repeat:no-repeat;
+        background-size:cover;
+    }
+
+    li{
+        width:140px;
+        text-align:center !important;
+    }
+
+    .collapse{
+        margin-left: 18%;
+    }
+
+</style>
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark container-fluid p-3">
+
+      <a class="navbar-brand" href="{% url 'index' %}">NMTools</a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}"> <img width="20" height="20" src="{% static 'icons/home.png' %}" alt="group"/> &nbsp; Home </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Services</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'config' %}">Configuration</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link">Contact</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link">About</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link">{{first_name}} {{last_name}}</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}"> <img width="25" height="25" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/exit.png" alt="exit"/> Log out </a>
+            </li>
+        </ul>
+
+      </div>
+</nav>

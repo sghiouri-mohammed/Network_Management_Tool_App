@@ -6,9 +6,39 @@ urlpatterns = [
 
     path("", views.login),
     path("Register/", views.register, name="register"),
+
     path("login/", views.login, name="login"),
+
     path("index/", views.index, name="index"),
-    path("configuration/", views.configuration, name="config"),
+
+    path("home/", views.home, name="home"),
+
+    path("Network Centers/", views.netwok_centers, name="config"),
+    path("Delete_center/<int:id_center>", views.delete_network_center, name="delete_network_center"),
+
+    path("Buildings/<int:id_center>", views.buildings, name="buildings"),
+    path("Delete_Buildings/<int:id_building>", views.delete_building, name="delete_building"),
+
+    path("Floors/<int:id_center>/<int:id_building>", views.floor, name="floors"),
+    path("Delete_floor/<int:id_floor>", views.delete_floor, name="delete_floor"),
+
+    path("Locals/<int:id_center>/<int:id_building>/<int:id_floor>", views.local, name="locals"),
+    path("Delete_local/<int:id_local>", views.delete_local, name="delete_local"),
+
+    path("Switches/<int:id_center>/<int:id_building>/<int:id_floor>/<int:id_local>", views.equipement, name="equipments"),
+    path("Delete_Material/<int:id_equipment>", views.delete_local, name="delete_equipment"),
+
+    path("Add_NC/", views.add_network_center, name="add_nc"),
+    path("Add_Building/", views.add_building, name="add_building"),
+    path("Add_Floor_Room/", views.add_floor_room, name="add_floor_room"),
+
+
+
+
+
+
+
+    path("devices/", views.devices, name="devices"),
     path("AddFloor/", views.addfloor, name="addfloor"),
     path("logout/", views.logout, name="logout"),
     path('campus/', views.campus_details, name='campus_details'),

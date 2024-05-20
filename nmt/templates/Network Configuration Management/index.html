@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Network Management Tool</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+
+    body{
+        background-image: url("../static/images/bg.png") !important;
+        background-repeat:no-repeat;
+        background-size:cover;
+    }
+
+    h2{
+        width:260px;    }
+
+    .class-grid{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 150px 150px 150px;
+        gap:20px;
+        margin-left:0px !important;
+
+    }
+
+    .grid-item{
+
+        font-size:25px;
+        display:flex;
+        justify-content:center;
+        padding:10px;
+        align-items:center;
+        background-color:white;
+        border-radius:10px;
+        border:2px solid transparent;
+        text-align:center;
+    }
+
+    .grid-item p{
+        width:200px;
+    }
+
+    .test{
+
+        display:grid;
+        grid-template-columns: 1fr 5fr;
+        gap:20px;
+
+    }
+
+    .btnn{
+        padding:0px;
+        width:100px;
+    }
+
+    .vv{
+        margin-bottom:50px;
+    }
+
+</style>
+
+<body>
+
+    <main class="test">
+
+        <div>
+            {% include 'Network Configuration Management/sidebar.html' %}
+        </div>
+
+        <section class="mt-3 mx-5">
+
+            <h3 class="vv"> NMT Insights </h3>
+
+            <div class="class-grid">
+
+                <div class="grid-item">
+                    <p> Number of Users  </p>
+                    <p>
+                        <img width="40" height="40" src="{% static 'icons/users.png' %}" alt="group"/>
+                        <br>
+                        {{number_of_users}}
+                        <br>
+                        <a class="btn btnn btn-success" href=""> Add <img width="30" height="30" src="{% static 'icons/plus.png' %}" alt="group"/>
+
+                        </a>
+                    </p>
+                </div>
+
+                <div class="grid-item">
+                    <p> Number of Devices </p>
+                    <p>
+                        <img width="40" height="40" src="{% static 'icons/devices.png' %}" alt="group"/>
+                        <br>
+                        {{number_of_materials}}
+                        <br>
+                        <a class="btn btnn btn-success" href=""> Add <img width="30" height="30" src="{% static 'icons/plus.png' %}" alt="group"/>
+
+                        </a>
+
+                    </p>
+                </div>
+
+                <div class="grid-item">
+                    <p> Number of Buildings </p>
+                    <p> <img width="30" height="30" src="{% static 'icons/buildings.png' %}" alt="group"/> <br>
+                        {{number_of_buildings}}
+                        <br>
+                        <a class="btn btnn btn-success" href="{% url 'add_building' %}"> Add <img width="30" height="30" src="{% static 'icons/plus.png' %}" alt="group"/>
+
+                        </a>
+                    </p>
+                </div>
+
+                <div class="grid-item">
+                    <p> Number of Floors </p>
+                    <p> <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/group.png" alt="group"/>
+                        <br>
+                        {{number_of_floors}}
+                        <br>
+                        <a class="btn btnn btn-success" href="{% url 'add_floor_room' %}"> Add <img width="30" height="30" src="{% static 'icons/plus.png' %}" alt="group"/>
+
+                        </a>
+                    </p>
+                </div>
+
+                <div class="grid-item">
+                    <p> Number of Today's Connexions </p>
+                    <p> <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/group.png" alt="group"/>
+                        <br>
+                        10
+                    <br>
+                        <a class="btn btnn btn-success" href=""> Add <img width="30" height="30" src="{% static 'icons/plus.png' %}" alt="group"/>
+
+                        </a>
+                    </p>
+                </div>
+
+                <div class="grid-item">
+                    <p> Network Centers </p>
+                    <p> <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/group.png" alt="group"/> <br>
+                        {{number_of_nc}}
+                    <br>
+                        <a class="btn btnn btn-success" href="{% url 'add_nc' %}"> Add <img width="30" height="30" src="{% static 'icons/plus.png' %}" alt="group"/>
+
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+</body>
+</html>

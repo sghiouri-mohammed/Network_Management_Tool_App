@@ -1,12 +1,16 @@
 from django.contrib import admin
 
-from .models import Account, Floor, ConferenceCenterBuildings, CampusBuildings, NetworkCenter, DataCenterBuildings
+from .models import Account, NetworkCenter, Building, Floor, Local, Equipement, Commands
+
+
 
 
 # Register your models here.
 admin.site.register(Account)
-admin.site.register(Floor)
-admin.site.register(ConferenceCenterBuildings)
-admin.site.register(CampusBuildings)
 admin.site.register(NetworkCenter)
-admin.site.register(DataCenterBuildings)
+admin.site.register(Building)
+admin.site.register(Floor)
+admin.site.register(Local)
+admin.site.register(Equipement)
+admin.site.register(Commands)
+

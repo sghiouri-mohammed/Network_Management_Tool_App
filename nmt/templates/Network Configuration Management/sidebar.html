@@ -1,0 +1,44 @@
+
+{% load static %}
+
+<style>
+  body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+  }
+</style>
+
+    <div id="nav-bar">
+
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'><link rel="stylesheet" href="{% static 'style/side.css' %}">
+      <input id="nav-toggle" type="checkbox"/>
+      <div id="nav-header">
+        <a id="nav-title" href="https://codepen.io" target="_blank">Network Tools</a>
+        <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+        <hr/>
+      </div>
+      <div id="nav-content">
+        <div class="nav-button"> <a class="nav-link" href="{% url 'home' %}">  <i class="fas fa-home"></i><span>Home</span></a></div>
+        <hr/>
+        <div class="nav-button"> <a class="nav-link" href="{% url 'index' %}"><i class="fas fa-home"></i><span>Dashboard</span></a></div>
+        <div class="nav-button"><a class="nav-link" href="{% url 'index' %}"><i class="fas fa-tools"></i><span>Services</span></a></div>
+        <div class="nav-button"><a class="nav-link" href="{% url 'config' %}"><i class="fas fa-tools"></i><span>Configuration</span></a></div>
+<!--    <div class="nav-button"><a class="nav-link" href="{% url 'devices' %}"><i class="fas fa-tools"></i><span>Devices</span></a></div>-->
+        <div class="nav-button"><a class="nav-link" href="{% url 'index' %}"><i class="fas fa-tools"></i><span>Contact</span></a></div>
+        <div class="nav-button"><a class="nav-link" href="{% url 'index' %}"><i class="fas fa-tools"></i><span>Profile</span></a></div>
+        <div id="nav-content-highlight"></div>
+      </div>
+      <input id="nav-footer-toggle" type="checkbox"/>
+      <div id="nav-footer">
+        <div id="nav-footer-heading">
+          <div id="nav-footer-avatar">
+            <img width="30" height="50" src="{% static 'icons/user.png' %}"/>
+          </div>
+          <div id="nav-footer-titlebox"><a id="nav-footer-title">{{ first_name }} {{ last_name }} </a><span id="nav-footer-subtitle">Admin</span></div>
+            <label for="nav-footer-toggle"><a class="nav-link" href="{% url 'logout' %}"> <img width="25" height="25" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/exit.png" alt="exit"/> </a></label>
+          </div>
+      </div>
+    </div>
+
+  </body>
+
+</html>

@@ -1,7 +1,5 @@
 from django.db import models
 
-
-
 class Account(models.Model):
 
     id = models.AutoField(primary_key=True)
@@ -13,41 +11,59 @@ class Account(models.Model):
 
 
 
+
+
+
 class NetworkCenter(models.Model):
     id = models.AutoField(primary_key=True)
     nom = models.CharField(max_length=255)
 
 
-class CampusBuildings(models.Model):
-    id_campus = models.IntegerField()
-    nom = models.CharField(max_length=255)
-
-class DataCenterBuildings(models.Model):
-    id_data = models.IntegerField()
-    nom = models.CharField(max_length=255)
+class Building(models.Model):
+    id = models.AutoField(primary_key=True)
+    id_network_center = models.IntegerField()
+    building_name = models.CharField(max_length=255)
+    info = models.CharField(max_length=500,null=True)
 
 
-class ConferenceCenterBuildings(models.Model):
-    id_conf = models.IntegerField()
-    nom = models.CharField(max_length=255)
+
 
 
 class Floor(models.Model):
     id = models.AutoField(primary_key=True)
-    floor_name = models.CharField(max_length=255)
-    floor_level = models.FloatField()
+    id_network_center = models.IntegerField()
+    id_building = models.IntegerField()
+    nom = models.CharField(max_length=30)
+    floor = models.IntegerField()
+    info = models.CharField(max_length=500, null=True)
+
+
+class Local(models.Model):
+    id = models.AutoField(primary_key=True)
+    id_network_center = models.IntegerField()
+    id_building = models.IntegerField()
+    id_floor_salle = models.IntegerField()
+    nom = models.CharField(max_length=30)
+    info = models.CharField(max_length=500, null=True)
+
+
 
 
 class Equipement(models.Model):
     id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=255)
+    id_network_center = models.IntegerField()
+    id_building = models.IntegerField()
+    id_floor_salle = models.IntegerField()
+    id_local = models.IntegerField()
+    nom = models.CharField(max_length=30)
     ip = models.CharField(max_length=20)
     model = models.CharField(max_length=255)
     role = models.CharField(max_length=255)
-    network_center = models.ForeignKey(NetworkCenter, on_delete=models.CASCADE)
-    building = models.IntegerField()
-    floor = models.ForeignKey(Floor, on_delete=models.CASCADE)
+    # serial_number = models.CharField(max_length=255)
+    # ios_version = models.CharField(max_length=255)
+    info = models.CharField(max_length=500, null=True)
 
 
-
-
+class Commands(models.Model):
+    id = models.AutoField(primary_key=True)
+    command_name = models.CharField(max_length=500)

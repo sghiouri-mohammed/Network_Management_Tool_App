@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier la Configuration de l'Interface</title>
+</head>
+<body>
+    <h2>Modifier la Configuration pour {{ equipement }}</h2>
+    <form action="" method="post">
+        <div>
+            <label for="interface_name">Nom de l'interface:</label>
+            <input type="text" id="interface_name" name="interface_name" required>
+        </div>
+        <div>
+            <label for="ip_address">Adresse IP:</label>
+            <input type="text" id="ip_address" name="ip_address" required>
+        </div>
+        <div>
+            <label for="subnet_mask">Masque de sous-réseau:</label>
+            <input type="text" id="subnet_mask" name="subnet_mask" required>
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description">
+        </div>
+        <div>
+            <button type="submit">Soumettre les modifications</button>
+        </div>
+    </form>
+    <a href="/">Retour</a>
+</body>
+</html>
