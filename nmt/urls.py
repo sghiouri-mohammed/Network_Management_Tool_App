@@ -32,7 +32,8 @@ urlpatterns = [
     path("Add_Building/", views.add_building, name="add_building"),
     path("Add_Floor_Room/", views.add_floor_room, name="add_floor_room"),
 
-
+    path("Details_Switch/", views.details_equipement, name="detail_equi"),
+    path("SSH_Connexion/", views.ssh_connexion, name="ssh_connexion"),
 
 
 
