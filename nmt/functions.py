@@ -4,7 +4,7 @@ import logging
 import datetime
 
 
-def ssh_connect(ip, username, password):
+def ssh_connect(ip, username, password, interface):
     try:
         # Define connection parameters
         cisco_device = {
@@ -20,14 +20,20 @@ def ssh_connect(ip, username, password):
         # Enter enable mode
         connection.enable()
 
-        # Exit configuration mode if in
-        if connection.check_config_mode():
-            connection.exit_config_mode()
+        # Enter configuration mode
+        connection.config_mode()
+
+        # Execute the shutdown and no shutdown commands
+        commands = [f"interface {interface}", "shutdown", "no shutdown", "end", "write memory"]
+        output = connection.send_config_set(commands)
+
+        # Exit configuration mode
+        connection.exit_config_mode()
 
         # Close the connection
         connection.disconnect()
 
-        return "SSH connection successful"
+        return output
 
     except Exception as e:
         logging.error(f"Connection or command execution error: {e}")

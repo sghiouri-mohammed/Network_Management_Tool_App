@@ -364,10 +364,8 @@ def details_equipement(request):
 
 
 def ssh_connexion(request):
-
-    # Initialize logging
     today = datetime.date.today()
-    logging.basicConfig(filename=f'logs/{today}.log', level=logging.DEBUG)
+    logging.basicConfig(filename=f'{today}.log', level=logging.DEBUG)
     logger = logging.getLogger("netmiko")
 
     # ANSI color codes
@@ -375,21 +373,33 @@ def ssh_connexion(request):
     cgrn = '\033[92m'
     cend = '\033[0m'
 
-    # Prompt the user for login credentials
-    ip = '192.168.1.2'
-    username = 'admin'
-    password = 'admin'
+    # Prompt the user for login credentials and interface
+    ip = "192.168.1.2"
+    username = "admin"
+    password = "admin"
+    interface = "gi1/0/1"
 
-    # Execute SSH connection
-    result = ssh_connect(ip, username, password)
+    # Execute SSH connection and command
+    output = ssh_connect(ip, username, password, interface)
+    if output:
+        print(f"{cgrn}{output}{cend}")
 
-    if result:
-        print(f"{cgrn}{result}{cend}")
+        # Log command execution
+        with open(f'{today}.log', 'a') as logFile:
+            logFile.write(f'{datetime.datetime.now()} : {username} : interface {interface}\n')
+            logFile.write(output + '\n')
 
-        # Log connection success
-        with open(f'logs/{today}.log', 'a') as logFile:
-            logFile.write(f'{datetime.datetime.now()} : {username} connected to {ip}\n')
-
+        # Save the output to a file
+        with open(f'{ip}.txt', 'a') as outputFile:
+            outputFile.write(
+                f'\n======================= {datetime.datetime.now()} : interface {interface} =======================\n')
+            out = output.split('\n')
+            for line in out:
+                if '#' in line:
+                    continue
+                else:
+                    print(f"{cgrn}{line.rstrip()}{cend}")
+                    outputFile.write(line + '\n')
     else:
         print(f"{cred}No output received from the device or an error occurred.{cend}")
 
