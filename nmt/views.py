@@ -387,7 +387,7 @@ def ssh_connexion(request):
         print(f"{cgrn}{result}{cend}")
 
         # Log connection success
-        with open(f'{today}.log', 'a') as logFile:
+        with open(f'logs/{today}.log', 'a') as logFile:
             logFile.write(f'{datetime.datetime.now()} : {username} connected to {ip}\n')
 
     else:
@@ -412,13 +412,6 @@ def data_centre_details(request):
 
 def conference_centre_details(request):
     return render(request, 'Network Configuration Management/conference_centre_details.html', context={"first_name":request.session["fname"], "last_name":request.session["lname"]})
-
-
-
-
-
-
-
 
 
 
